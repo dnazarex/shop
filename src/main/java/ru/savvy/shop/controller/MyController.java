@@ -21,7 +21,8 @@ public class MyController {
     @RequestMapping(value = "/mypage", method = RequestMethod.GET)
     public ModelAndView myPage(){
         ModelAndView model = new ModelAndView("mypage"); // view name
-        model.addObject("myObject", myService.myDataFromDB().isEmpty()); // data to be passed to the view
+        model.addObject("myObject", myService.myDataFromDB()); // data to be passed to the view
+        model.addObject("tableName","Product");
         return model;
     }
 }

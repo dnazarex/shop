@@ -1,4 +1,10 @@
 # See http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 spring:
   thymeleaf.cache: false
-  main.show-banner: false
+  main.show-banner: true
+
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/shop
+    username: postgres
+    password:
