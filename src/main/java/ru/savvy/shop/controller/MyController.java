@@ -12,7 +12,8 @@ public class MyController {
 
     @RequestMapping("/mypage")
     public ModelAndView myPage(){
-        ModelAndView model = new ModelAndView("mypage");
+        ModelAndView model = new ModelAndView("mypage"); // view name
+        model.addObject("myObject", "Hello i'm a controller data"); // data to be passed to the view
         return model;
     }
 }
