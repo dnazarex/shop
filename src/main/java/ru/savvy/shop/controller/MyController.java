@@ -1,8 +1,13 @@
 package ru.savvy.shop.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import ru.savvy.shop.service.MyService;
 
 /**
  * Created by dnazarex on 11/02/15.
@@ -10,10 +15,13 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MyController {
 
-    @RequestMapping("/mypage")
+    @Autowired
+    private MyService myService;
+
+    @RequestMapping(value = "/mypage", method = RequestMethod.GET)
     public ModelAndView myPage(){
         ModelAndView model = new ModelAndView("mypage"); // view name
-        model.addObject("myObject", "Hello i'm a controller data"); // data to be passed to the view
+        model.addObject("myObject", myService.myDataFromDB().isEmpty()); // data to be passed to the view
         return model;
     }
 }

@@ -8,32 +8,34 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
 import javax.sql.DataSource;
 
 @Configuration
+@EnableJpaRepositories
 public class AppConfig {
-    @Autowired
-    DataSourceProperties dataSourceProperties;
+//    @Autowired
+//    DataSourceProperties dataSourceProperties;
 
-    @Bean
-    DataSource dataSource() {
-        DataSource dataSource = DataSourceBuilder
-                .create(this.dataSourceProperties.getClassLoader())
-                .url(this.dataSourceProperties.getUrl())
-                .username(this.dataSourceProperties.getUsername())
-                .password(this.dataSourceProperties.getPassword())
-                .build();
-        return new DataSourceSpy(dataSource);
-    }
-
-    @Bean
-    @Order(Ordered.HIGHEST_PRECEDENCE)
-    CharacterEncodingFilter characterEncodingFilter() {
-        CharacterEncodingFilter filter = new CharacterEncodingFilter();
-        filter.setEncoding("UTF-8");
-        filter.setForceEncoding(true);
-        return filter;
-    }
+//    @Bean
+//    DataSource dataSource() {
+//        DataSource dataSource = DataSourceBuilder
+//                .create(this.dataSourceProperties.getClassLoader())
+//                .url(this.dataSourceProperties.getUrl())
+//                .username(this.dataSourceProperties.getUsername())
+//                .password(this.dataSourceProperties.getPassword())
+//                .build();
+//        return new DataSourceSpy(dataSource);
+//    }
+//
+//    @Bean
+//    @Order(Ordered.HIGHEST_PRECEDENCE)
+//    CharacterEncodingFilter characterEncodingFilter() {
+//        CharacterEncodingFilter filter = new CharacterEncodingFilter();
+//        filter.setEncoding("UTF-8");
+//        filter.setForceEncoding(true);
+//        return filter;
+//    }
 }
