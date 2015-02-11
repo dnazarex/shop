@@ -1,4 +1,4 @@
-package ru.savvy.shop;
+package ru.savvy.shop.controller;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
