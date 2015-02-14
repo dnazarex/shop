@@ -18,10 +18,10 @@ public class MyController {
     @Autowired
     private MyService myService;
 
-    @RequestMapping(value = "/mypage", method = RequestMethod.GET)
-    public ModelAndView myPage(){
+    @RequestMapping(value = "/mypage/{id}", method = RequestMethod.GET)
+    public ModelAndView myPage(@PathVariable Long id){
         ModelAndView model = new ModelAndView("mypage"); // view name
-        model.addObject("myObject", myService.myDataFromDB()); // data to be passed to the view
+        model.addObject("myObject", myService.myDataFromDB(id)); // data to be passed to the view
         model.addObject("tableName","Product");
         return model;
     }

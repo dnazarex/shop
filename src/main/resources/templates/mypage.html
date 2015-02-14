@@ -6,7 +6,7 @@
 <body>
     <h1>The example of thymeleaf template</h1>
 
-    <div>Showing content of table <span th:text="${tableName}">Nothing???</span></div>
+    <div>Showing content of table <span data-th-text="${tableName}">Nothing???</span></div>
 
     <table border="1">
         <tr data-th-each="product : ${myObject}">

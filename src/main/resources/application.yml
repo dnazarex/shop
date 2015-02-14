@@ -8,3 +8,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/shop
     username: postgres
     password:
+
+
+server:
+  tomcat.background-processor-delay: 1

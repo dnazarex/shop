@@ -12,6 +12,18 @@ public class Product implements Serializable{
     private Long id;
     private String name;
 
+    @Basic
+    @Column(name = "group_id")
+    public Long getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Long groupId) {
+        this.groupId = groupId;
+    }
+
+    private Long groupId;
+
     @Id
     @Column(name = "id")
     public Long getId() {
