@@ -25,4 +25,7 @@ public class MyService {
         return productRepository.findByGroupId(id);
 
     }
+    public List<Product> myDataFromDB() {
+        return productRepository.findAll();
+    }
 }

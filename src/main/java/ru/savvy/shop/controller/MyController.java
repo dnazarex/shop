@@ -25,4 +25,12 @@ public class MyController {
         model.addObject("tableName","Product");
         return model;
     }
+
+    @RequestMapping(value = "/mypage", method = RequestMethod.GET)
+    public ModelAndView myPage(){
+        ModelAndView model = new ModelAndView("mypage"); // view name
+        model.addObject("myObject", myService.myDataFromDB()); // data to be passed to the view
+        model.addObject("tableName","Product");
+        return model;
+    }
 }
